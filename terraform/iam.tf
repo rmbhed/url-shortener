@@ -41,7 +41,7 @@ resource "google_service_account_iam_member" "workload_identity_user" {
 # Permission to push to Artifact Registry
 resource "google_project_iam_member" "artifact_registry_writer" {
   project = var.project_id
-  role    = "roles/artifactregistry.writer"
+  role    = "roles/artifactregistry.repoAdmin"
   member  = "serviceAccount:${google_service_account.github_actions_sa.email}"
 }
 
