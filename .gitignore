@@ -1,1 +1,12 @@
-terraform/
+# Terraform files
+terraform/.terraform/
+terraform/*.tfstate*
+terraform/.terraform.lock.hcl
+
+# Secret files
+terraform/*.tfvars
+
+# Go binaries and OS files
+app/server
+app/check_build
+.DS_Store
