@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Basic CSP to reduce risk of injected inline scripts executing -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src *">
+    <title>rmbh.me — Shortlinks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">rmbh.me</div>
+          <nav class="nav-small">Shortlinks</nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+      <h1 class="page-title">Shortlinks</h1>
+
+      <section class="card">
+        <h2>Create a shortlink</h2>
+        <form id="create-form">
+          <label>
+            Short name
+            <input id="shortname" name="shortName" placeholder="e.g. strava" required>
+          </label>
+          <label>
+            Destination URL
+            <input id="url" name="url" placeholder="https://..." required>
+          </label>
+          <div class="actions">
+            <button type="submit">Create</button>
+            <button type="button" id="clear">Clear</button>
+          </div>
+        </form>
+        <div id="create-msg" class="msg"></div>
+      </section>
+
+      <section class="card">
+        <h2>Existing shortlinks</h2>
+        <div class="actions">
+          <button id="refresh">Refresh</button>
+        </div>
+        <div id="links-list">Loading…</div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
